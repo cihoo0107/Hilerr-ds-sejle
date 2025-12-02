@@ -24,3 +24,5 @@ app.MapRazorPages();
 
 app.Run();
 //Burak
+
+//Emre
