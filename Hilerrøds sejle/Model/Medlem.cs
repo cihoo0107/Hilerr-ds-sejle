@@ -1,14 +1,14 @@
 ﻿namespace Hilerrøds_sejle.Model;
 
-public class Medlemmer
+public class Medlem
 {
-    public string Name { get; set; }    
-    public string Email { get; set; }
-    public string Password { get; set; }
+    public string Name { get; }    
+    public string Email { get; }
+    public string Password { get; }
 
-    public Medlemmer() { }
+    public Medlem() { }
 
-    public Medlemmer(string name, string email, string password)
+    public Medlem(string name, string email, string password)
     { 
        Name = name; 
        Email = email;
