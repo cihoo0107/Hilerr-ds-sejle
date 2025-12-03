@@ -1,6 +1,6 @@
 ﻿namespace Hilerrøds_sejle.Model
 {
-    public class BlogService
+    public class Blog
     {
     }
 }
