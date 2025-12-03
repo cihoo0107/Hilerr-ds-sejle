@@ -20,3 +20,18 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+
+.nav.nav-underline .nav-link {
+    color: black;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+}
+
+.nav.nav-underline .nav-link:hover,
+.nav.nav-underline .nav-link:focus {
+    color: blue;
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+}
