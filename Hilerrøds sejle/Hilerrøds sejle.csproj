@@ -7,4 +7,8 @@
     <RootNamespace>Hilerrøds_sejle</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Medlem\" />
+  </ItemGroup>
+
 </Project>
