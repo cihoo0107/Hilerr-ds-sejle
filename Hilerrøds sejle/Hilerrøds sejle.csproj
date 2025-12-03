@@ -7,4 +7,9 @@
     <RootNamespace>Hilerrøds_sejle</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+
 </Project>
