@@ -4,3 +4,37 @@
 }
 
 <h1>Både</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Bådnavn</th>
+            <th>Bådtype</th>
+            <th>Model</th>
+            <th>Sejlnummer</th>
+            <th>Længde (m)</th>
+            <th>Højde (m)</th>
+            <th>Byggeår</th>
+            <th>Detaljer</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var båd in Model.Både)
+    {
+        <tr>
+            <td>@båd.BådNavn</td>
+            <td>@båd.BådType</td>
+            <td>@båd.Model</td>
+            <td>@båd.SejlNummer</td>
+            <td>@båd.BådLængde</td>
+            <td>@båd.BådHøjde</td>
+            <td>@båd.ByggeÅr</td>
+            <td>
+                <a asp-page="Detaljer" asp-route-sejlNummer="@båd.SejlNummer" class="btn btn-sm btn-primary">
+                    Vis
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
