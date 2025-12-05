@@ -1,9 +1,13 @@
+using Hilerrøds_sejle.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+builder.Services.AddSingleton<IBådservice, Bådeservice>();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
