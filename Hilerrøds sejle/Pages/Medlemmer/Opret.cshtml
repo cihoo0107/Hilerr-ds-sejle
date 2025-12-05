@@ -1,0 +1,43 @@
+﻿@page
+@model Hilerrøds_sejle.Pages.Medlemmer.OpretModel
+@{
+
+
+    ViewData["Title"] = "Opret Medlem";
+}
+
+<h1>Opret Medlem</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="NyMedlem.Navn" class="control-label"></label>
+        <input asp-for="NyMedlem.Navn" class="form-control" />
+        <span asp-validation-for="NyMedlem.Navn" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NyMedlem.Email" class="control-label"></label>
+        <input asp-for="NyMedlem.Email" class="form-control" />
+        <span asp-validation-for="NyMedlem.Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NyMedlem.Rolle" class="control-label"></label>
+        <select asp-for="NyMedlem.Rolle" class="form-control">
+            @foreach (var r in Enum.GetValues(typeof(Hilerrøds_sejle.Model.Medlemsrolle)))
+            {
+                <option value="@((int)r)">@r</option>
+            }
+        </select>
+        <span asp-validation-for="NyMedlem.Rolle" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <input type="submit" value="Opret" class="btn btn-primary" />
+        <a asp-page="Index" class="btn btn-secondary">Annuller</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
