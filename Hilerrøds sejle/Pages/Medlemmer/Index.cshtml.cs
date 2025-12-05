@@ -6,10 +6,12 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
 {
     public class IndexModel : PageModel
     {
-        
+        public static List<Medlem> Medlemmer = new List<Medlem>();
 
         public void OnGet()
         {
         }
+        // Opret Medlem
+        //public IActionResult OnPostCreate()
     }
 }
