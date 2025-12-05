@@ -1,6 +1,8 @@
-﻿namespace Hilerrøds_sejle.Service
+﻿using Hilerrøds_sejle.Model;
+
+namespace Hilerrøds_sejle.Service;
+
+public interface IEventService
 {
-    public class EventService
-    {
-    }
+    List<Event> GetAll();
 }
