@@ -1,3 +1,41 @@
 ﻿
 @page
 @model Hilerrøds_sejle.Pages.Medlemmer.IndexModel
+@{
+    ViewData["Title"] = "Medlemmer";
+}
+
+<h1>Medlemmer</h1>
+
+<p>Her vises medlemmer af Hillerød Sejlklub</p>
+
+<p>
+    <a asp-page="Opret" class="btn btn-primary">Opret nyt medlem</a>
+</p>    
+
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>Id</th>
+            <th>Navn</th>
+            <th>Email</th>
+            <th>Rolle</th>
+            <th></th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var m in @Model.Medlemmer)
+        {
+            <tr>
+                <td>@m.Id</td>
+                <td>@m.Navn</td>
+                <td>@m.Email</td>
+                <td>@m.Rolle</td>
+                <td>
+                    <a asp-page"Edit" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Rediger </a>
+                    <a asp-page"Delete" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Slet </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
