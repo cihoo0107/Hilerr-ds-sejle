@@ -35,3 +35,25 @@ body {
     color: blue;
     border-bottom-color: rgba(0, 0, 0, 0.5);
 }
+
+.logo {
+    height: 3rem;
+    width: 3rem;
+}
+
+.frontpage-image {
+    width: 100%;
+    height: 100%;
+}
+
+.frontpage-image-container {
+    width: 175%;
+}
+
+.heading {
+    font-size: 7rem;
+}
+
+.frontpage-text {
+    font-size: 2rem;
+}
