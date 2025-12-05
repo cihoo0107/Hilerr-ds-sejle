@@ -6,6 +6,7 @@ public enum Medlemsrolle
 Medlem,
 Bestyrelsesmedlem,
 Næstformand,
+Næstforkvinde,
 Formand
 }
 
@@ -15,7 +16,7 @@ public class Medlem
 
     [Required]
     [StringLength(30,MinimumLength = 2)]
-    public string Name { get; set; }
+    public string Navn { get; set; }
 
     [Required]
     [EmailAddress]
@@ -24,12 +25,12 @@ public class Medlem
     [Required]
     public Medlemsrolle Rolle { get; set; } = Medlemsrolle.Medlem;
 
-    public Medlem() { }
+    //public Medlem() { }
 
-    public Medlem(string name, string email, int id, Medlemsrolle rolle)
+    public Medlem(string navn, string email, int id, Medlemsrolle rolle)
     {
        Id = id;
-       Name = name; 
+       Navn = navn; 
        Email = email;
        Rolle = rolle;
     }
