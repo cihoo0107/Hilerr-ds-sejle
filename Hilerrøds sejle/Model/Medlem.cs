@@ -25,7 +25,8 @@ public class Medlem
     [Required]
     public Medlemsrolle Rolle { get; set; } = Medlemsrolle.Medlem;
 
-    //public Medlem() { }
+    //Skal være tilstede for razor pages modelbinding
+    public Medlem() { }
 
     public Medlem(string navn, string email, int id, Medlemsrolle rolle)
     {

@@ -24,7 +24,7 @@
     </tr>
 </thead>
 <tbody>
-    @foreach (var m in @Model.Medlemmer)
+    @foreach (var m in Model.Medlemmer)
         {
             <tr>
                 <td>@m.Id</td>
@@ -32,8 +32,8 @@
                 <td>@m.Email</td>
                 <td>@m.Rolle</td>
                 <td>
-                    <a asp-page"Edit" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Rediger </a>
-                    <a asp-page"Delete" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Slet </a>
+                    <a asp-page="Edit" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Rediger </a>
+                    <a asp-page="Delete" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Slet </a>
                 </td>
             </tr>
         }

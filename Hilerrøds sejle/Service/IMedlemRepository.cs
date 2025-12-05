@@ -11,5 +11,5 @@ public interface IMedlemRepository
     Medlem? GetById(int id);
     void Add(Medlem medlem);
     void Update(Medlem medlem);
-    bool Delete(int id);
+    void Delete(int id);
 }
