@@ -1,6 +1,7 @@
 ﻿using Hilerrøds_sejle.Model;
 using Hilerrøds_sejle.Pages;
 using Hilerrøds_sejle.Service;
+
 namespace Hilerrøds_sejle.Service;
 
 public class EventService : IEventService
