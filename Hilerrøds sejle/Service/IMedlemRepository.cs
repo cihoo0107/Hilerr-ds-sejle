@@ -13,4 +13,4 @@ public interface IMedlemRepository
     void Update(Medlem medlem);
     void Delete(int id);
 }
-//twwat
+
