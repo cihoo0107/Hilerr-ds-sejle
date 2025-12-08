@@ -5,5 +5,6 @@ namespace Hilerrøds_sejle.Service
     public interface IBådservice
     {
         List<Båd> GetAll();
+       
     }
 }
