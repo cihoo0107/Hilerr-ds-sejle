@@ -9,7 +9,6 @@
         {
             Titel = titel;
             Content = content;
-
         }
     }
 
