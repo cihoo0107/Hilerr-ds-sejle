@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Hilerrøds_sejle.Service;
 using Hilerrøds_sejle.Model;
 
-
 namespace Hilerrøds_sejle.Pages.Både
 {
     public class IndexModel : PageModel
