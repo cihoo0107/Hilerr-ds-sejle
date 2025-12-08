@@ -6,8 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<IBådservice, Bådeservice>();
-
+builder.Services.AddSingleton<IEventService, EventService>();
 var app = builder.Build();
+
+
 
 
 
