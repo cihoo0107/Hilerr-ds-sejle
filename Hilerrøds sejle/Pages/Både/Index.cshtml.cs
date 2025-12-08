@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Hilerrøds_sejle.Service;
 using Hilerrøds_sejle.Model;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Hilerrøds_sejle.Pages.Både
 {

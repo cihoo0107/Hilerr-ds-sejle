@@ -1,11 +1,11 @@
-using Hilerrøds_sejle.Service;
+using HilerrÃ¸ds_sejle.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddSingleton<IBådservice, Bådeservice>();
+builder.Services.AddSingleton<IBÃ¥dservice, BÃ¥deservice>();
 builder.Services.AddSingleton<IEventService, EventService>();
 var app = builder.Build();
 
