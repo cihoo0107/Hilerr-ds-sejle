@@ -9,6 +9,7 @@ builder.Services.AddSingleton<IBådservice, Bådeservice>();
 builder.Services.AddSingleton<IEventService, EventService>();
 builder.Services.AddSingleton<IBookingService, BookingService>();
 builder.Services.AddSingleton<IMedlemRepository, MedlemRepository>();
+builder.Services.AddSingleton<IBlogService, BlogService>();
 var app = builder.Build();
 
 

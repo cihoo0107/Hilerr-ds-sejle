@@ -4,5 +4,7 @@ namespace Hilerrøds_sejle.Service
     public interface IEventService
     {
         List<Event> GetAll();
+        void Add(Event events);
+        
     }
 }
