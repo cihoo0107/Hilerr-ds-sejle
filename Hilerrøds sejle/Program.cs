@@ -7,6 +7,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<IBådservice, Bådeservice>();
 builder.Services.AddSingleton<IEventService, EventService>();
+builder.Services.AddSingleton<IBookingService, BookingService>();
 var app = builder.Build();
 
 

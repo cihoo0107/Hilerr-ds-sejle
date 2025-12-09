@@ -1,0 +1,9 @@
+using Hilerrøds_sejle.Model;
+
+namespace Hilerrøds_sejle.Service
+{
+    public interface IBookingService
+    {
+        List<Booking> GetAll();
+    }
+}
