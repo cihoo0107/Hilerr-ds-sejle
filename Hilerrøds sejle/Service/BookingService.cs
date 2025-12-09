@@ -19,9 +19,13 @@ public class BookingService : IBookingService
     
             
     };
-    
+
     public List<Booking> GetAll()
     {
         return _Bookings;
+    }
+
+    public void Add (Booking booking) {
+        _Bookings.Add(booking);
     }
 }

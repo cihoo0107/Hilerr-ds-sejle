@@ -5,5 +5,6 @@ namespace Hilerrøds_sejle.Service
     public interface IBookingService
     {
         List<Booking> GetAll();
+        void Add(Booking booking);
     }
 }
