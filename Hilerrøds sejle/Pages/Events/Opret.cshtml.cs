@@ -7,14 +7,16 @@ namespace Hilerrøds_sejle.Pages.Events
 {
     public class OpretModel : PageModel
     {
-        private IEventService _eventService;
+        private IEventService _eventservice;
+        public Event NewEvent { get; set; }
 
         public OpretModel(IEventService eventservice)
         {
-            _eventService = eventservice;
+            _eventservice = eventservice;
         }
 
-
+        [BindProperty]
+        public Event NytEvent { get; set; }
         public void OnGet()
         {
         }
@@ -26,9 +28,7 @@ namespace Hilerrøds_sejle.Pages.Events
                 return Page();
             }
 
-            _eventService.Add(new Event("Julefest", new DateTime(2025, 12, 22, 21, 0, 0)));
-
-
+            _eventservice.Add(NytEvent);
             return RedirectToPage("Index");
         }
     }

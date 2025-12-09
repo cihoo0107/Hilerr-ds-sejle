@@ -2,3 +2,21 @@
 @model Hilerrøds_sejle.Pages.Events.OpretModel
 @{
 }
+
+<h2>Opret nyt Event</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="NytEvent.Navn"></label>
+        <input asp-for="NytEvent.Navn" class="form-control" />
+        <span asp-validation-for="NytEvent.Navn" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NytEvent.Tidspunkt"></label>
+        <input asp-for="NytEvent.Tidspunkt" type="datetime-local" class="form-control" />
+        <span asp-validation-for="NytEvent.Tidspunkt" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Gem Event</button>
+</form>
