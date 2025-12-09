@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Hilerrøds_sejle.Pages.Medlemmer
 {
-    public class EditModel : PageModel
+    public class RedigerModel : PageModel
     {
         public void OnGet()
         {
