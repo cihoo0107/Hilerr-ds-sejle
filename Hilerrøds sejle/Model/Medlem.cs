@@ -14,11 +14,11 @@ public class Medlem
 {
     public int Id { get; set; }
 
-    [Required]
+    [Required(ErrorMessage ="Indast dit navn!")]
     [StringLength(30,MinimumLength = 2)]
     public string Navn { get; set; }
 
-    [Required]
+    [Required(ErrorMessage ="Indtast din mail!")]
     [EmailAddress]
     public string Email { get; set; }
 
