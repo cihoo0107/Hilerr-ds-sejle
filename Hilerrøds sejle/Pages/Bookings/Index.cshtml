@@ -1,0 +1,19 @@
+﻿@page
+@model Hilerrøds_sejle.Pages.Bookings.IndexModel
+@{
+}
+
+
+<h1>hello to booking</h1>
+
+
+
+
+<h1>Bookings</h1>
+
+@foreach (var booking in Model.Bookings)
+    {
+        <div>
+            <h2>@booking.BookingBåd.BådNavn</h2>
+       </div>
+        }
