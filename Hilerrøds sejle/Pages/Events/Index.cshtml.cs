@@ -20,6 +20,7 @@ namespace Hilerrøds_sejle.Pages.Events
         public void OnGet()
         {
             Events = _eventservice.GetAll();
+            _eventservice.Add(new Event("Julefest", new DateTime(2025, 12, 22, 21, 0, 0)));
         }
     }
 }
