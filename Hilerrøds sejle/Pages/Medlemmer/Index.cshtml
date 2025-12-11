@@ -16,7 +16,7 @@
 <table class="table table-striped">
 <thead>
     <tr>
-        @*<th>Id</th>*@
+            @*<th>Id</th>*@
             <th>Navn</th>
             <th>Email</th>
             <th>Rolle</th>
@@ -27,7 +27,7 @@
     @foreach (var m in Model.Medlemmer)
         {
             <tr>
-                @*<td>@m.Id</td> // viser Id, ikke nødvendigt*@
+                @*<td>@m.Id</td -- behøver ikke at vises*@ 
                 <td>@m.Navn</td>
                 <td>@m.Email</td>
                 <td>@m.Rolle</td>

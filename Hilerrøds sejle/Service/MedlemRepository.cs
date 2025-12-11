@@ -8,12 +8,12 @@ namespace Hilerrøds_sejle.Service
     {
         private static readonly List<Medlem> _medlemmer = new List<Medlem>
         {
-        new Medlem("Niels", "Niels@mail.com",001,Medlemsrolle.Formand),
-        new Medlem("Peter","Peterersej@mail.com",007,Medlemsrolle.Medlem),
-        new Medlem("Maja","Maja@mail.com",002,Medlemsrolle.Næstforkvinde)
+        new Medlem("Niels", "Niels@mail.com",1,Medlemsrolle.Formand),
+        new Medlem("Peter","Peterersej@mail.com",3,Medlemsrolle.Medlem),
+        new Medlem("Maja","Maja@mail.com",2,Medlemsrolle.Næstforkvinde)
 
         };
-        private static int _nextId = 4;
+        private static int _nextId = 4; // næste medlem for tildelt id 4, fordi Niels = 1, Peter = 3 og Maja = 2
 
         public List<Medlem> GetAll()
         {
