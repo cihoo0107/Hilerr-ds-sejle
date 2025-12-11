@@ -3,6 +3,7 @@
     public class Båd
     {
         public string BådType { get; }
+        public int Id { get; set; }
         public string Model { get; }
         public string SejlNummer { get; }
         public int BådLængde { get; }

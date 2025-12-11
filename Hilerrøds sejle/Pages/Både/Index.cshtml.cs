@@ -18,7 +18,9 @@ namespace Hilerrøds_sejle.Pages.Både
         
         public void OnGet()
         {
+            
             Både = _bådservice.GetAll();
+            
         }
     }
 }

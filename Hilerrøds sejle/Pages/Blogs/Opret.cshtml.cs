@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Hilerrøds_sejle.Pages.Medlemmer
+namespace Hilerrøds_sejle.Pages.Blogs
 {
-    public class RedigerModel : PageModel
+    public class OpretModel : PageModel
     {
         public void OnGet()
         {
