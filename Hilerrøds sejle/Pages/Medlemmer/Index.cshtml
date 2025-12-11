@@ -32,8 +32,8 @@
                 <td>@m.Email</td>
                 <td>@m.Rolle</td>
                 <td>
-                    <a asp-page="Edit" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Rediger </a>
-                    <a asp-page="Delete" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Slet </a>
+                    <a asp-page="Rediger" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Rediger </a> @*Edit er ændret til Rediger*@
+                    <a asp-page="Slet" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Slet </a> @*Delete er ændret til Slet*@
                 </td>
             </tr>
         }

@@ -4,7 +4,7 @@ using Hilerrøds_sejle.Model;
 
 namespace Hilerrøds_sejle.Service
 {
-    public class MedlemRepository : IMedlemRepository
+    public class MedlemService : IMedlemService
     {
         private static readonly List<Medlem> _medlemmer = new List<Medlem>
         {
