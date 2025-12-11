@@ -4,7 +4,7 @@ using Hilerrøds_sejle.Model;
 
 namespace Hilerrøds_sejle.Service
 {
-    public class MedlemRepository : IMedlemRepository
+    public class MedlemService : IMedlemService
     {
         private static readonly List<Medlem> _medlemmer = new List<Medlem>
         {
@@ -29,13 +29,13 @@ namespace Hilerrøds_sejle.Service
         public void Add(Medlem medlem)
         {
             medlem.Id = _nextId++;
-            _medlemmer.Add(medlem);
+            _medlemmer.Add(medlem); 
         }
 
         public void Update(Medlem medlem)
 
         {
-            var existing = GetById(medlem.Id);
+            var existing = GetById(medlem.Id); 
             if (existing == null) return;
 
             existing.Navn = medlem.Navn;

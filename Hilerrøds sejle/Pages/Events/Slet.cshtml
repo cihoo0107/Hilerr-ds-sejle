@@ -1,0 +1,23 @@
+﻿@page
+@model Hilerrøds_sejle.Pages.Events.SletModel
+@{
+}
+
+<h2>Bekræft sletning</h2>
+
+<p>Er du sikker på, at du vil slette dette event?</p>
+
+<div>
+    <strong>Navn:</strong> @Model.EventToDelete.Navn <br />
+    <strong>Tidspunkt:</strong> @Model.EventToDelete.Tidspunkt.ToString("dd-MM-yyyy HH:mm")
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="EventToDelete.Id" />
+    <input type="hidden" asp-for="EventToDelete.Navn" />
+    <input type="hidden" asp-for="EventToDelete.Tidspunkt" />
+    
+    <button type="submit" class="btn btn-danger">Slet</button>
+    <a asp-page="/Events/Index" class="btn btn-secondary">Annuller</a>
+</form>
+

@@ -5,6 +5,7 @@ namespace Hilerrøds_sejle.Service
     {
         List<Event> GetAll();
         void Add(Event events);
+        void Delete(Event events);
         
     }
 }

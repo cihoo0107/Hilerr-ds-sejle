@@ -8,8 +8,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IBådservice, Bådeservice>();
 builder.Services.AddSingleton<IEventService, EventService>();
 builder.Services.AddSingleton<IBookingService, BookingService>();
-builder.Services.AddSingleton<IMedlemRepository, MedlemRepository>();
+builder.Services.AddSingleton<IMedlemService, MedlemService>();
 builder.Services.AddSingleton<IBlogService, BlogService>();
+builder.Services.AddSingleton<IMedlemService, MedlemService>();
 var app = builder.Build();
 
 
