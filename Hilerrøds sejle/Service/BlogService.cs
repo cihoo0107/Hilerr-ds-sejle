@@ -4,20 +4,23 @@ using Hilerrøds_sejle.Service;
 namespace Hilerrøds_sejle.Service
 {
     public class BlogService : IBlogService
-{
-    private List<Blog> _Blogs = new List<Blog>()
     {
-
+        private List<Blog> _Blogs = new List<Blog>()
+    {
+         new Blog("Velkommen til vores Blog", "Dette er vores første blogindlæg... "),
+            new Blog("Sejltur i en dejlig sommersol", "Vi havde en skøn sejltur efter sommerfesten...")
     };
 
         public List<Blog> GetAll()
         {
             return _Blogs;
         }
-//    public void Add(Blog blog)
-//    {
-//        _Blogs.Add(blog);
-//    }
+        public void Add(Blog blog)
+        {
+            _Blogs.Add(blog);
+        }
     }
 }
+
+           
 
