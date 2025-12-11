@@ -11,12 +11,36 @@ namespace Hilerrøds_sejle.Service
             new Båd("Sejlbåd", "Q35","3115",8,3,"2003","The Quruce"),
             new Båd("Skoda", "60","3112",4,1,"2022","Enyaq")
         };
+        private static int _nextId = 4;
 
         public List<Båd> GetAll()
         {
-            return _både;
+            return _både.ToList();
         }
 
+        // Hent alle både
+        public Båd? GetById(int id)
+        {
+            return _både.FirstOrDefault(b => b.Id == id);
+        }
+
+        // Tilføj en ny båd 
+        public void Add(Båd båd)
+        {
+            båd.Id = _nextId++;
+            _både.Add(båd);
+        }
+
+        public void Update(Båd båd)
+        {
+            var existing = GetById(båd.Id);
+        }
+        public void Delete(int id)
+        {
+            var existing = GetById(id);
+            if (existing != null)
+                _både.Remove(existing);
+        }
 
         //public void Add(Båd båd)
         //{
