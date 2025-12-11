@@ -13,9 +13,24 @@
 <div>
     <h5>Medlemmer</h5>
     <dl>
+
+
+
 <dt>Navn</dt>
+<dd>@Model.MedlemToDelete.Navn</dd>
+
 <dt>Email</dt>
-<dt></dt>
+<dd>@Model.MedlemToDelete.Email</dd>
+
+<dt>Rolle</dt>
+<dd>@Model.MedlemToDelete.Rolle</dd>
+
     </dl>
+
+    <form method="post">
+        <input type="hidden" name="id" value="@Model.MedlemToDelete.Id" />
+        <button type="submit" class="btn btn-danger">Slet</button>
+        <a asp-page="Index" class="btn btn-secondary">Annuller</a>
+    </form>
 
 </div>
