@@ -6,6 +6,8 @@ namespace Hilerrøds_sejle.Model
     {
         public Båd BookingBåd { get; }
         public Medlem BookingMedlem { get; }
+        public string Id {get; }
+        public string Destination {get; }
 
         public Booking(Båd bookingBåd, Medlem bookingMedlem)
         {

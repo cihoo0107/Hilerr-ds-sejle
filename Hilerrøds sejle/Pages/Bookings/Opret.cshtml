@@ -1,4 +1,16 @@
 ﻿@page
 @model Hilerrøds_sejle.Pages.Bookings.OpretModel
-@{
-}
+
+<h2>Opret Model</h2>
+<form method="post">
+    <label for="medlemSelect">Vælg medlem:</label>
+    <select id="medlemSelect" asp-for="SelectedMedlemId" class="form-control">
+        <option value="">-- Vælg et medlem --</option>
+        @foreach (var medlem in Model.Medlemmer)
+        {
+            <option value="@medlem.Id">@medlem.Navn (@medlem.Email)</option>
+        }
+    </select>
+
+    <button type="submit" class="btn btn-primary mt-3">Book</button>
+</form>
