@@ -1,0 +1,25 @@
+@model Hilerrøds_sejle.Model.Booking
+
+<div class="col">
+    <div class="card h-100 shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">@Model.BookingBåd.BådNavn</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@Model.BookingBåd.BådType</h6>
+
+            <p class="card-text">
+                <strong>Model:</strong> @Model.BookingBåd.Model <br />
+                <strong>Sejlnummer:</strong> @Model.BookingBåd.SejlNummer <br />
+                <strong>Længde:</strong> @Model.BookingBåd.BådLængde m <br />
+                <strong>Højde:</strong> @Model.BookingBåd.BådHøjde m <br />
+                <strong>Byggeår:</strong> @Model.BookingBåd.ByggeÅr <br />
+            </p>
+
+            <hr />
+
+            <p class="card-text mb-0">
+                <strong>Booket af:</strong> @Model.BookingMedlem?.Navn <br />
+                <strong>Email:</strong> @Model.BookingMedlem?.Email
+            </p>
+        </div>
+    </div>
+</div>
