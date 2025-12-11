@@ -3,7 +3,7 @@
     public class Event
     {
         public string Navn { get; set; }
-        public DateTime Tidspunkt { get; }
+        public DateTime Tidspunkt { get; set; }
 
         public Event() 
         { 
