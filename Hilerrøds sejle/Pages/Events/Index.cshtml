@@ -8,7 +8,6 @@
     <a asp-page="/Events/Opret" class="btn btn-success mb-3">Opret nyt Event</a>
     @foreach (var e in Model.Events)
     {
-
         <li>
             <strong>@e.Navn</strong> - @e.Tidspunkt.ToString("dd.MM.yyyy HH:mm")
             <!-- Slet-knap -->
