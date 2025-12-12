@@ -8,7 +8,7 @@ namespace Hilerrøds_sejle.Pages.Bookings
     public class OpretModel : PageModel
     {
         private readonly IBookingService _bookingService;
-        private readonly IMedlemRepository _medlemService;
+        private readonly IMedlemService _medlemService;
 
         public List<Medlem> Medlemmer { get; private set; } = new();
 
@@ -26,7 +26,7 @@ namespace Hilerrøds_sejle.Pages.Bookings
 
         public OpretModel(
             IBookingService bookingService,
-            IMedlemRepository medlemService)
+            IMedlemService medlemService)
         {
             _bookingService = bookingService;
             _medlemService = medlemService;
