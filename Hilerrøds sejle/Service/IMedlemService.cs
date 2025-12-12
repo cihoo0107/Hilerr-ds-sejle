@@ -5,7 +5,7 @@ using Hilerrøds_sejle.Model;
 namespace Hilerrøds_sejle.Service;
 
 
-public interface IMedlemRepository
+public interface IMedlemService
 {
     List<Medlem> GetAll();
     Medlem? GetById(int id);

@@ -2,3 +2,33 @@
 @model Hilerrøds_sejle.Pages.Både.OpretModel
 @{
 }
+
+<h1>Opret Båd</h1>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="NytBåd.Model" class="control-label"></label>
+        <input asp-for="NytBåd.Model" class="form-control" />
+        <span asp-validation-for="NytBåd.Model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NytBåd.SejlNummer" class="control-label"></label>
+        <input asp-for="NytBåd.SejlNummer" class="form-control" />
+        <span asp-validation-for="NytBåd.SejlNummer" class="text-black"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NytBåd.ByggeÅr" class="control-label"></label>
+        <input asp-for="NytBåd.ByggeÅr" class="form-control" />
+        <span asp-validation-for="NytBåd.ByggeÅr" class="text-black"></span>
+        </div>
+    <div class="form-group">
+        <label asp-for="NytBåd.BådNavn" class="control-label"></label>
+        <input asp-for="NytBåd.BådNavn" class="form-control" />
+        <span asp-validation-for="NytBåd.BådNavn" class="text-black"></span>
+    </div>
+    <p>
+        <div class="form-group">
+            <input type="submit" value="Opret" class="btn btn-primary"
+        </div>
+    </p>
+</form>
+

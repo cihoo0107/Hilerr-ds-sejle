@@ -5,63 +5,65 @@ using Hilerrøds_sejle.Service;
 
 namespace Hilerrøds_sejle.Pages.Bookings
 {
-public class OpretModel : PageModel
-{
-    private readonly IBookingService _bookingService;
-    private readonly IMedlemRepository _medlemService;
-
-    public List<Medlem> Medlemmer { get; private set; } = new();
-
-    [BindProperty]
-    public int SelectedMedlemId { get; set; }
-
-    [BindProperty]
-    public string Destination { get; set; }
-
-    [BindProperty]
-    public DateTime Tidspunkt { get; set; }
-
-    [BindProperty]
-    public bool ErGennemført { get; set; }
-
-    public OpretModel(IBookingService bookingService, IMedlemRepository medlemService)
+    public class OpretModel : PageModel
     {
-        _bookingService = bookingService;
-        _medlemService = medlemService;
-    }
+        private readonly IBookingService _bookingService;
+        private readonly IMedlemRepository _medlemService;
 
-    public void OnGet()
-    {
-        Medlemmer = _medlemService.GetAll();
-    }
+        public List<Medlem> Medlemmer { get; private set; } = new();
 
-    public IActionResult OnPost()
-    {
-        if (!ModelState.IsValid)
-            return Page();
+        [BindProperty]
+        public int SelectedMedlemId { get; set; }
 
-        var medlem = _medlemService.GetById(SelectedMedlemId);
+        [BindProperty]
+        public string Destination { get; set; }
 
-        if (medlem == null)
+        [BindProperty]
+        public DateTime Tidspunkt { get; set; }
+
+        [BindProperty]
+        public bool ErGennemført { get; set; }
+
+        public OpretModel(
+            IBookingService bookingService,
+            IMedlemRepository medlemService)
         {
-            ModelState.AddModelError("", "Medlem findes ikke.");
-            return Page();
+            _bookingService = bookingService;
+            _medlemService = medlemService;
         }
 
-        // Static boat as requested
-        var båd = new Båd("Motorbåd", "X20", "4120", 10, 4, "2005", "Lambo");
+        public void OnGet()
+        {
+            Medlemmer = _medlemService.GetAll();
+        }
 
-        var booking = new Booking(
-            båd,
-            medlem,
-            Destination,
-            Tidspunkt,
-            ErGennemført
-        );
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+                return Page();
 
-        _bookingService.Add(booking);
+            var medlem = _medlemService.GetById(SelectedMedlemId);
 
-        return RedirectToPage("Index");
+            if (medlem == null)
+            {
+                ModelState.AddModelError("", "Medlem findes ikke.");
+                return Page();
+            }
+
+            // Static boat as requested
+            var båd = new Båd("Motorbåd", "X20", "4120", 10, 4, "2005", "Lambo");
+
+            var booking = new Booking(
+                båd,
+                medlem,
+                Destination,
+                Tidspunkt,
+                ErGennemført
+            );
+
+            _bookingService.Add(booking);
+
+            return RedirectToPage("Index");
+        }
     }
-}
 }

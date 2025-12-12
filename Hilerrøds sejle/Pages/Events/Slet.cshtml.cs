@@ -8,15 +8,18 @@ namespace Hilerrøds_sejle.Pages.Events
     public class SletModel : PageModel
     {
         private readonly IEventService _eventService;
+
         [BindProperty]
         public Event EventToDelete { get; set; }
+
         public SletModel(IEventService eventService)
         {
             _eventService = eventService;
         }
+
         public IActionResult OnGet(string id)
         {
-            EventToDelete = _eventService.GetAll().FirstOrDefault(@event => @event.Id == id);
+            EventToDelete = _eventService.GetAll().FirstOrDefault(e => e.Id == id);
             if (EventToDelete == null)
             {
                 return RedirectToPage("/Events/Index");
@@ -26,7 +29,7 @@ namespace Hilerrøds_sejle.Pages.Events
 
         public IActionResult OnPost()
         {
-            _eventService.Delete(EventToDelete);
+            _eventService.DeleteById(EventToDelete.Id);
             return RedirectToPage("/Events/Index");
         }
     }

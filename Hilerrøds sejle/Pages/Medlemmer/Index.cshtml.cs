@@ -8,11 +8,11 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
 
     public class IndexModel : PageModel
     {
-        private IMedlemRepository _medlemRepository;
+        private IMedlemService _medlemRepository;
 
         public List<Medlem> Medlemmer { get; private set; }
 
-        public IndexModel(IMedlemRepository medlemRepository)
+        public IndexModel(IMedlemService medlemRepository)
         {
             _medlemRepository = medlemRepository;
             Medlemmer = new List<Medlem>();

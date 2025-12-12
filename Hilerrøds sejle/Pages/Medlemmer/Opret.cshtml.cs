@@ -7,9 +7,9 @@
     {
         public class OpretModel : PageModel
         {
-            private readonly IMedlemRepository _repo;
+            private readonly IMedlemService _repo;
 
-            public OpretModel(IMedlemRepository repo)
+            public OpretModel(IMedlemService repo)
             {
                 _repo = repo;
                 NyMedlem = new Medlem(); // vigtigt til form-binding
