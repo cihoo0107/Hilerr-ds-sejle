@@ -5,11 +5,16 @@
 
 <h2> Blog </h2>
 <ul>
-    <a asp - page = "/Blog/Opret" class= "btn btn-success mb-3" > Opret nyt Blog</a>
+    <a asp-page = "/Blog/Opret" class= "btn btn-success mb-3" > Opret nyt Blog</a>
     @foreach (var  blog in Model.Blogs)
 {
             <li >
                 <strong > @blog.Titel </strong > – @blog.Content)
+            
+            <a asp-page = "/Blog/Slet" asp-route-id = "@blog.Id" class= "btn btn-danger btn-sm ms-2" >
+            Slet
+                </a >
+                     
             </li >
     }
 </ul >

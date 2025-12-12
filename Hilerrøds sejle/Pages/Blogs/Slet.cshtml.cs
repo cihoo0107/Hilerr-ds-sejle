@@ -1,10 +1,10 @@
-using Hilerrøds_sejle.Model;
-using Hilerrøds_sejle.Service;
+using HilerrÃ¸ds_sejle.Model;
+using HilerrÃ¸ds_sejle.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics.Metrics;
 
-namespace Hilerrøds_sejle.Pages.Blogs
+namespace HilerrÃ¸ds_sejle.Pages.Blogs
 {
     public class SletModel : PageModel
     {
