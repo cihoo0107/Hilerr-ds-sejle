@@ -1,7 +1,10 @@
 ﻿@page
 @model Hilerrøds_sejle.Pages.Bookings.OpretModel
+@{
+}
 
-<h2>Opret Model</h2>
+<h2>Opret Booking</h2>
+
 <form method="post">
     <label for="medlemSelect">Vælg medlem:</label>
     <select id="medlemSelect" asp-for="SelectedMedlemId" class="form-control">
@@ -11,6 +14,24 @@
             <option value="@medlem.Id">@medlem.Navn (@medlem.Email)</option>
         }
     </select>
+    <label class="mt-3">Vælg båd:</label>
+    <select asp-for="SelectedBådId" class="form-control">
+        <option value="">-- Vælg en båd --</option>
+        @foreach (var båd in Model.Både)
+        {
+        <option value="@båd.Id">
+            @båd.BådType - @båd.Model (@båd.SejlNummer)
+        </option>
+       }
+    </select>
+    <label class="mt-3">Destination:</label>
+    <input asp-for="Destination" class="form-control" />
+
+    <label class="mt-3">Tidspunkt:</label>
+    <input asp-for="Tidspunkt" type="datetime-local" class="form-control" />
+
+    <label class="mt-3">Er gennemført?</label>
+    <input asp-for="ErGennemført" type="checkbox" />
 
     <button type="submit" class="btn btn-primary mt-3">Book</button>
 </form>

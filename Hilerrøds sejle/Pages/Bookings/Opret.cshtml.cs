@@ -9,21 +9,40 @@ namespace Hilerrøds_sejle.Pages.Bookings
     {
         private readonly IBookingService _bookingService;
         private readonly IMedlemService _medlemService;
+        private readonly IBådservice _bådService;
 
         public List<Medlem> Medlemmer { get; private set; } = new();
+        public List<Båd> Både { get; private set; } = new();
 
         [BindProperty]
         public int SelectedMedlemId { get; set; }
 
-        public OpretModel(IBookingService bookingService, IMedlemService medlemService)
+        [BindProperty]
+        public int SelectedBådId { get; set; }
+
+        [BindProperty]
+        public string Destination { get; set; }
+
+        [BindProperty]
+        public DateTime Tidspunkt { get; set; }
+
+        [BindProperty]
+        public bool ErGennemført { get; set; }
+
+        public OpretModel(
+            IBookingService bookingService,
+            IMedlemService medlemService,
+            IBådservice bådService)
         {
             _bookingService = bookingService;
             _medlemService = medlemService;
+            _bådService = bådService;
         }
 
         public void OnGet()
         {
             Medlemmer = _medlemService.GetAll();
+            Både = _bådService.GetAll();
         }
 
         public IActionResult OnPost()
@@ -33,15 +52,24 @@ namespace Hilerrøds_sejle.Pages.Bookings
 
             var medlem = _medlemService.GetById(SelectedMedlemId);
 
-            if (medlem == null)
+            var båd = _bådService.GetById(SelectedBådId);
+
+            if (medlem == null || båd == null)
             {
-                ModelState.AddModelError("", "Medlem findes ikke.");
+                ModelState.AddModelError("", "Medlem eller båd findes ikke.");
+                Medlemmer = _medlemService.GetAll();
+                Både = _bådService.GetAll();
                 return Page();
             }
 
-            var båd = new Båd("Motorbåd", "X20", "4120", 10, 4, "2005", "Lambo");
+            var booking = new Booking(
+                båd,
+                medlem,
+                Destination,
+                Tidspunkt,
+                ErGennemført
+            );
 
-            var booking = new Booking(båd, medlem);
             _bookingService.Add(booking);
 
             return RedirectToPage("Index");
