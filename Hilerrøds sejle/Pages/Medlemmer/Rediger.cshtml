@@ -22,28 +22,51 @@
 
     <dt>Rolle</dt>
     <dd>@Model.MedlemToEdit.Rolle</dd>
+
     </dl>
+
+    <p1>Rediger følgende oplysninger:</p1>
 
     <form method="post">
        <input type ="hidden" asp-for="MedlemToEdit.Id" />
 
+        <div class="form-group">
        <label asp-for="MedlemToEdit.Navn"></label>
         <input asp-for="MedlemToEdit.Navn" />
         <span asp-validation-for="MedlemToEdit.Navn"></span>
+        </div>
 
+        <div class="form-group">
+            <dl></dl>
+        </div>
+
+
+        <div class="form-group">
         <label asp-for="MedlemToEdit.Email"></label>
         <input asp-for="MedlemToEdit.Email" />
         <span asp-validation-for="MedlemToEdit.Email"></span>
+        </div>
 
+    <div class="form-group">    
+        <dl></dl>
+    </div>
+
+
+        <div class="form-group">
         <label asp-for="MedlemToEdit.Rolle"></label>
         <input asp-for="MedlemToEdit.Rolle" />
         <span asp-validation-for="MedlemToEdit.Rolle"></span>
+        </div>
 
+        <div class="form-group">
+            <dl></dl>
+        </div>
 
 
         @*<button type="submit">Gem</button>*@
         <button type="submit" class="btn btn-primary">Ændre</button>
-        <a asp-page="Index">Annuller</a>
+        @*<a asp-page="Index">Annuller</a>*@
+        <a asp-page="Index" class="btn btn-secondary">Annuller</a>
     </form>
 
     @section Scripts {
