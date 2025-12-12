@@ -7,6 +7,7 @@ namespace Hilerrøds_sejle.Service
         void Add(Event events);
         void Delete(Event events);
         void DeleteById(string Id);
+        void Update(Event events);
         
     }
 }
