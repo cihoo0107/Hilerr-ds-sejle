@@ -6,7 +6,6 @@ public enum Medlemsrolle
 Medlem,
 Bestyrelsesmedlem,
 Næstformand,
-Næstforkvinde,
 Formand
 }
 
@@ -14,7 +13,7 @@ public class Medlem
 {
     public int Id { get; set; }
 
-    [Required(ErrorMessage ="Indast dit navn")]
+    [Required(ErrorMessage ="Indtast dit navn")]
     [StringLength(100,MinimumLength = 2, ErrorMessage="Navnet er for kort")]
     public string Navn { get; set; }
 

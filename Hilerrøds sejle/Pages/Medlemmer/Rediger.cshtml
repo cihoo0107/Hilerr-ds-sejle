@@ -51,8 +51,18 @@
         <dl></dl>
     </div>
 
+        @*<form method="post">
+    <label for="medlemSelect">Vælg medlem:</label>
+    <select id="medlemSelect" asp-for="SelectedMedlemId" class="form-control">
+        <option value="">-- Vælg et medlem --</option>
+        @foreach (var medlem in Model.Medlemmer)
+        {
+            <option value="@medlem.Id">@medlem.Navn (@medlem.Email)</option>
+        }
+    </select>*@
 
-        <div class="form-group">
+
+@*         <div class="form-group">
         <label asp-for="MedlemToEdit.Rolle"></label>
         <input asp-for="MedlemToEdit.Rolle" />
         <span asp-validation-for="MedlemToEdit.Rolle"></span>
@@ -60,6 +70,18 @@
 
         <div class="form-group">
             <dl></dl>
+        </div> *@
+
+
+        <div class="form-group">
+            <label asp-for="MedlemToEdit.Rolle"></label>
+            <select asp-for="MedlemToEdit.Rolle" class="form-control">
+                <option value="">-- Vælg rolle --</option>
+                <option value="Formand">Formand</option>
+                <option value="Medlem">Medlem</option>
+                <option value="Bestyrelsesmedlem">Bestyrelsesmedlem</option>
+            </select>
+            <span asp-validation-for="MedlemToEdit.Rolle" class="text-danger"></span>
         </div>
 
 
