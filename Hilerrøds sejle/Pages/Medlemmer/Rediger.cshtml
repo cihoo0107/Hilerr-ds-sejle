@@ -73,7 +73,7 @@
         </div> *@
 
 
-        <div class="form-group">
+        <div class="form-group col-md-2">
             <label asp-for="MedlemToEdit.Rolle"></label>
             <select asp-for="MedlemToEdit.Rolle" class="form-control">
                 <option value="">-- Vælg rolle --</option>
@@ -84,6 +84,9 @@
             <span asp-validation-for="MedlemToEdit.Rolle" class="text-danger"></span>
         </div>
 
+        <div>
+         <dl></dl>
+        </div>
 
         @*<button type="submit">Gem</button>*@
         <button type="submit" class="btn btn-primary">Ændre</button>
