@@ -18,6 +18,7 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
         [BindProperty]
         public Medlem MedlemToEdit { get; set; }
 
+        [TempData]
         public string? SuccessMessage { get; set; }
 
         public IActionResult OnGet(int id)

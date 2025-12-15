@@ -24,6 +24,8 @@ public class Medlem
     [Required]
     public Medlemsrolle Rolle { get; set; } = Medlemsrolle.Medlem;
 
+    [Required(ErrorMessage ="Indtast et gyldigt telefon nummer")]
+    [StringLength(8,MinimumLength=8,ErrorMessage ="Telefon nummeret er for kort")]
     public string TelefonNummer {  get; set; } = string.Empty;
 
     public string Adresse { get; set; } = string.Empty;

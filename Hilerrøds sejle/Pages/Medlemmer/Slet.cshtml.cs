@@ -15,7 +15,7 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
         {
             _repo = repo;
         }
-
+        [TempData]
         public string? SuccessMessage { get; set; }
 
         public IActionResult OnGet(int id)
