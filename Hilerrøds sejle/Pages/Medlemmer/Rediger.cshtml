@@ -23,6 +23,12 @@
     <dt>Rolle</dt>
     <dd>@Model.MedlemToEdit.Rolle</dd>
 
+    <dt>Adresse</dt>
+    <dd>@Model.MedlemToEdit.Adresse</dd>
+
+    <dt>Telefon Nummer</dt>
+    <dd>@Model.MedlemToEdit.TelefonNummer</dd>
+
     </dl>
 
     <p1>Rediger følgende oplysninger:</p1>
@@ -82,6 +88,18 @@
                 <option value="Bestyrelsesmedlem">Bestyrelsesmedlem</option>
             </select>
             <span asp-validation-for="MedlemToEdit.Rolle" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MedlemToEdit.Adresse"></label>
+            <input asp-for="MedlemToEdit.Adresse" />
+            <span asp-validation-for="MedlemToEdit.Adresse"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MedlemToEdit.TelefonNummer"></label>
+            <input asp-for="MedlemToEdit.TelefonNummer" />
+            <span asp-validation-for="MedlemToEdit.TelefonNummer"></span>
         </div>
 
         <div>

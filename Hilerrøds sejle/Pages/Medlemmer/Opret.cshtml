@@ -32,6 +32,19 @@
         <span asp-validation-for="NyMedlem.Rolle" class="text-danger"></span>
     </div>
 
+    <div class="form-group">
+        <label asp-for="NyMedlem.Adresse" class="control-label"></label>
+        <input asp-for="NyMedlem.Adresse" class="form-control" />
+        <span asp-validation-for="NyMedlem.Adresse" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NyMedlem.TelefonNummer" class="control-label"></label>
+        <input asp-for="NyMedlem.TelefonNummer" class="form-control" />
+        <span asp-validation-for="NyMedlem.TelefonNummer" class="text-danger"></span>
+    </div>
+
+
     <div class="form-group mt-2">
         <input type="submit" value="Opret" class="btn btn-primary" />
         <a asp-page="Index" class="btn btn-secondary">Annuller</a>

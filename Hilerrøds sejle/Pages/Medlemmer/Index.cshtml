@@ -20,6 +20,8 @@
             <th>Navn</th>
             <th>Email</th>
             <th>Rolle</th>
+            <th>Adresse</th>
+            <th>Telefon Nummer</th>
             <th></th>
     </tr>
 </thead>
@@ -31,6 +33,8 @@
                 <td>@m.Navn</td>
                 <td>@m.Email</td>
                 <td>@m.Rolle</td>
+                <td>@m.Adresse</td>
+                <td>@m.TelefonNummer</td>
                 <td>
                     <a asp-page="Rediger" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Rediger </a> @*Edit er ændret til Rediger*@
                     <a asp-page="Slet" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Slet </a> @*Delete er ændret til Slet*@
