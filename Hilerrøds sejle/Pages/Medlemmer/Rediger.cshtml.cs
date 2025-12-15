@@ -18,6 +18,8 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
         [BindProperty]
         public Medlem MedlemToEdit { get; set; }
 
+        public string? SuccessMessage { get; set; }
+
         public IActionResult OnGet(int id)
         {
             MedlemToEdit = _repo.GetById(id);
@@ -28,11 +30,13 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
+
             {
                 return Page();
             }
 
             var existing = _repo.GetById(MedlemToEdit.Id);
+
             if (existing == null) return NotFound();
 
             existing.Navn = MedlemToEdit.Navn;  
@@ -42,6 +46,9 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
             existing.TelefonNummer = MedlemToEdit.TelefonNummer;
 
             _repo.Update(existing);
+
+            SuccessMessage = "Medlem opdateret.";
+
 
             return RedirectToPage("Index");
         }

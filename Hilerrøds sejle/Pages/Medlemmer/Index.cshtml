@@ -9,9 +9,16 @@
 
 <p>Her vises vores medlemmer.</p>
 
+@if (TempData["SuccessMessage"] is string msg)
+{
+    <div class="alert alert-success">
+        @msg
+    </div>
+}
+
 <p>
     <a asp-page="Opret" class="btn btn-primary">Opret nyt medlem</a>
-</p>    
+</p> 
 
 <table class="table table-striped">
 <thead>
