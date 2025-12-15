@@ -26,7 +26,7 @@ public class Medlem
 
     [Required(ErrorMessage ="Indtast et gyldigt telefon nummer")]
     [StringLength(8,MinimumLength=8,ErrorMessage ="Telefon nummeret er for kort")]
-    public string TelefonNummer {  get; set; } = string.Empty;
+    public string Telefonnummer {  get; set; } = string.Empty;
 
     public string Adresse { get; set; } = string.Empty;
 
@@ -39,7 +39,7 @@ public class Medlem
        Navn = navn; 
        Email = email;
        Rolle = rolle;
-       TelefonNummer = telefonnummer;
+       Telefonnummer = telefonnummer;
        Adresse = adresse;
     }
 }

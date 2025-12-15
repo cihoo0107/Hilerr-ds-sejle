@@ -42,7 +42,7 @@ namespace Hilerrøds_sejle.Service
             existing.Email = medlem.Email;
             existing.Rolle = medlem.Rolle;
             existing.Adresse = medlem.Adresse;
-            existing.TelefonNummer = medlem.TelefonNummer;
+            existing.Telefonnummer = medlem.Telefonnummer;
         }
 
         public void Delete(int id)

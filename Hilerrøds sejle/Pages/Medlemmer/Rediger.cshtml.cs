@@ -44,7 +44,7 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
             existing.Email = MedlemToEdit.Email;
             existing.Rolle = MedlemToEdit.Rolle;
             existing.Adresse = MedlemToEdit.Adresse;
-            existing.TelefonNummer = MedlemToEdit.TelefonNummer;
+            existing.Telefonnummer = MedlemToEdit.Telefonnummer;
 
             _repo.Update(existing);
 
