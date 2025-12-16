@@ -2,14 +2,14 @@
 {
     public class Båd
     {
-        public string BådType { get; }
+        public string BådType { get; set; }
         public int Id { get; set; }
-        public string Model { get; }
-        public string SejlNummer { get; }
-        public int BådLængde { get; }
-        public int BådHøjde { get; }
-        public string ByggeÅr { get; }
-        public string BådNavn { get; }
+        public string Model { get; set; }
+        public string SejlNummer { get; set; }
+        public int BådLængde { get; set; }
+        public int BådHøjde { get; set; }
+        public string ByggeÅr { get; set; }
+        public string BådNavn { get; set; }
 
         private static int _nextId = 1;
 
