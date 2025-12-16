@@ -30,7 +30,18 @@
                 <strong>Status:</strong> 
                 @(Model.ErGennemført ? "Gennemført" : "Ikke gennemført")
             </p>
-
+            <hr />
+            <a asp-page="/Bookings/Slet"
+               asp-route-id="@Model.Id"
+               class="btn btn-danger">
+                Slet
+            </a>
+            <a asp-page="/Bookings/Rediger"
+               asp-route-id="@Model.Id"
+               class="btn btn-warning">
+                Edit
+            </a>
+ 
         </div>
     </div>
 </div>

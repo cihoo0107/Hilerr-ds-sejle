@@ -1,4 +1,131 @@
 ﻿@page
 @model Hilerrøds_sejle.Pages.Medlemmer.RedigerModel
 @{
+    ViewData["Title"] = "Rediger Medlem";
 }
+
+<h1>Rediger medlem</h1>
+
+<hr />
+
+@* <h4>Rediger følgende oplysninger om medlemmet:</h4> *@
+
+<div>
+    <h5>Medlemmet:</h5>
+    <dl>
+
+    <dt>Navn</dt>
+    <dd>@Model.MedlemToEdit.Navn</dd>
+
+    <dt>Email</dt>
+    <dd>@Model.MedlemToEdit.Email</dd>
+
+    <dt>Rolle</dt>
+    <dd>@Model.MedlemToEdit.Rolle</dd>
+
+    <dt>Adresse</dt>
+    <dd>@Model.MedlemToEdit.Adresse</dd>
+
+    <dt>Telefonnummer</dt>
+    <dd>@Model.MedlemToEdit.Telefonnummer</dd>
+
+    </dl>
+
+    <p1>Rediger følgende oplysninger:</p1>
+
+    <form method="post">
+       <input type ="hidden" asp-for="MedlemToEdit.Id" />
+
+        <div class="form-group">
+       <label asp-for="MedlemToEdit.Navn"></label>
+        <input asp-for="MedlemToEdit.Navn" />
+        <span asp-validation-for="MedlemToEdit.Navn"></span>
+        </div>
+
+        <div class="form-group">
+            <dl></dl>
+        </div>
+
+
+        <div class="form-group">
+        <label asp-for="MedlemToEdit.Email"></label>
+        <input asp-for="MedlemToEdit.Email" />
+        <span asp-validation-for="MedlemToEdit.Email"></span>
+        </div>
+
+    <div class="form-group">    
+        <dl></dl>
+    </div>
+
+        @*<form method="post">
+    <label for="medlemSelect">Vælg medlem:</label>
+    <select id="medlemSelect" asp-for="SelectedMedlemId" class="form-control">
+        <option value="">-- Vælg et medlem --</option>
+        @foreach (var medlem in Model.Medlemmer)
+        {
+            <option value="@medlem.Id">@medlem.Navn (@medlem.Email)</option>
+        }
+    </select>*@
+
+
+@*         <div class="form-group">
+        <label asp-for="MedlemToEdit.Rolle"></label>
+        <input asp-for="MedlemToEdit.Rolle" />
+        <span asp-validation-for="MedlemToEdit.Rolle"></span>
+        </div>
+
+        <div class="form-group">
+            <dl></dl>
+        </div> *@
+
+
+
+
+        <div class="form-group col-md-2">
+            <label asp-for="MedlemToEdit.Rolle"></label>
+            <select asp-for="MedlemToEdit.Rolle" class="form-control">
+                <option value="">-- Vælg rolle --</option>
+                <option value="Formand">Formand</option>
+                <option value="Medlem">Medlem</option>
+                <option value="Bestyrelsesmedlem">Bestyrelsesmedlem</option>
+            </select>
+            <span asp-validation-for="MedlemToEdit.Rolle" class="text-danger"></span>
+        </div>
+
+
+
+        <div class="form-group">
+            <dl></dl>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MedlemToEdit.Adresse"></label>
+            <input asp-for="MedlemToEdit.Adresse" />
+            <span asp-validation-for="MedlemToEdit.Adresse"></span>
+        </div>
+
+        <div class="form-group">
+            <dl></dl>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MedlemToEdit.Telefonnummer"></label>
+            <input asp-for="MedlemToEdit.Telefonnummer" />
+            <span asp-validation-for="MedlemToEdit.Telefonnummer"></span>
+        </div>
+
+        <div>
+         <dl></dl>
+        </div>
+
+        @*<button type="submit">Gem</button>*@
+        <button type="submit" class="btn btn-primary">Ændre</button>
+        @*<a asp-page="Index">Annuller</a>*@
+        <a asp-page="Index" class="btn btn-secondary">Annuller</a>
+    </form>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+</div>

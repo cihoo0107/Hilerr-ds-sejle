@@ -8,9 +8,9 @@ namespace Hilerrøds_sejle.Service
     {
         private static readonly List<Medlem> _medlemmer = new List<Medlem>
         {
-        new Medlem("Niels", "Niels@mail.com",1,Medlemsrolle.Formand),
-        new Medlem("Peter","Peterersej@mail.com",3,Medlemsrolle.Medlem),
-        new Medlem("Maja","Maja@mail.com",2,Medlemsrolle.Næstforkvinde)
+        new Medlem("Niels", "Niels@mail.com",1,Medlemsrolle.Formand,"10203040","Købmandsgade 12"),
+        new Medlem("Peter","Peterersej@mail.com",3,Medlemsrolle.Medlem,"40302010","Smedegade 37"),
+        new Medlem("Maja","Maja@mail.com",2,Medlemsrolle.Medlem,"30405060","Jernbanevej 15" )
 
         };
         private static int _nextId = 4; // næste medlem for tildelt id 4, fordi Niels = 1, Peter = 3 og Maja = 2
@@ -41,6 +41,8 @@ namespace Hilerrøds_sejle.Service
             existing.Navn = medlem.Navn;
             existing.Email = medlem.Email;
             existing.Rolle = medlem.Rolle;
+            existing.Adresse = medlem.Adresse;
+            existing.Telefonnummer = medlem.Telefonnummer;
         }
 
         public void Delete(int id)

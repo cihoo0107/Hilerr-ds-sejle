@@ -8,6 +8,7 @@
 
 <h1>Opret Medlem</h1>
 
+
 <form method="post">
     <div class="form-group">
         <label asp-for="NyMedlem.Navn" class="control-label"></label>
@@ -31,6 +32,19 @@
         </select>
         <span asp-validation-for="NyMedlem.Rolle" class="text-danger"></span>
     </div>
+
+    <div class="form-group">
+        <label asp-for="NyMedlem.Adresse" class="control-label"></label>
+        <input asp-for="NyMedlem.Adresse" class="form-control" />
+        <span asp-validation-for="NyMedlem.Adresse" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NyMedlem.Telefonnummer" class="control-label"></label>
+        <input asp-for="NyMedlem.Telefonnummer" class="form-control" />
+        <span asp-validation-for="NyMedlem.Telefonnummer" class="text-danger"></span>
+    </div>
+
 
     <div class="form-group mt-2">
         <input type="submit" value="Opret" class="btn btn-primary" />

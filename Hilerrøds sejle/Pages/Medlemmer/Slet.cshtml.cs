@@ -15,6 +15,8 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
         {
             _repo = repo;
         }
+        [TempData]
+        public string? SuccessMessage { get; set; }
 
         public IActionResult OnGet(int id)
 
@@ -31,6 +33,9 @@ namespace Hilerrøds_sejle.Pages.Medlemmer
 
             
                 _repo.Delete(id);
+
+            SuccessMessage = "Medlem slettet" ;
+
                 return RedirectToPage("Index");
             
         }

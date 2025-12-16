@@ -1,0 +1,44 @@
+﻿@page
+@model Hilerrøds_sejle.Pages.Bookings.RedigerModel
+
+<h2>Rediger booking</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<form method="post">
+    <input type="hidden" asp-for="BookingToEdit.Id" />
+    <label for="medlemSelect">Vælg medlem:</label>
+    <select id="medlemSelect" asp-for="SelectedMedlemId" class="form-control">
+        <option value="">-- Vælg et medlem --</option>
+        @foreach (var medlem in Model.Medlemmer)
+        {
+            <option value="@medlem.Id">@medlem.Navn (@medlem.Email)</option>
+        }
+    </select>
+    <label class="mt-3">Vælg båd:</label>
+    <select asp-for="SelectedBådId" class="form-control">
+        <option value="">-- Vælg en båd --</option>
+        @foreach (var båd in Model.Både)
+        {
+        <option value="@båd.Id">
+            @båd.BådType - @båd.Model (@båd.SejlNummer)
+        </option>
+       }
+    </select>
+
+    <label class="mt-3">Destination:</label>
+    <input asp-for="BookingToEdit.Destination" class="form-control" />
+
+    <label class="mt-3">Tidspunkt:</label>
+    <input asp-for="BookingToEdit.Tidspunkt"
+           type="datetime-local"
+           class="form-control" />
+
+    <label class="mt-3">Er gennemført?</label>
+    <input asp-for="BookingToEdit.ErGennemført" type="checkbox" />
+
+    <button type="submit" class="btn btn-primary mt-3">
+        Gem ændringer
+    </button>
+
+    <a asp-page="Index" class="btn btn-secondary">Annuller</a>
+</form>
