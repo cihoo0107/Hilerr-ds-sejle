@@ -13,7 +13,7 @@ namespace Hilerrøds_sejle.Service
         new Medlem("Maja","Maja@mail.com",2,Medlemsrolle.Medlem,"30405060","Jernbanevej 15" )
 
         };
-        private static int _nextId = 4; // næste medlem for tildelt id 4, fordi Niels = 1, Peter = 3 og Maja = 2
+        private static int _nextId = 0; // næste medlem får tildelt id 4, fordi Niels = 1, Peter = 3 og Maja = 2
 
         public List<Medlem> GetAll()
         {

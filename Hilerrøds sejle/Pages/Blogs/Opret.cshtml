@@ -3,20 +3,20 @@
 @{
 }
 
-<h2> Opret nyt Blog</h2>
+<h2>Opret nyt Blog</h2>
 
 <form method="post">
-    <div class= "form-group">
-        <label asp -for= "NytBlog.Titel" ></label>
-        <input asp -for= "NytBlog.Titel" class= "form-control"/>
-        <span asp - validation -for= "NytBlog.Titel" class= "text-danger" ></span>
+    <div class="form-group">
+        <label asp-for="NytBlog.Titel"></label>
+        <input asp-for="NytBlog.Titel" class="form-control" />
+        <span asp-validation-for="NytBlog.Titel" class="text-danger"></span>
     </div>
 
-    <div class= "form-group">
-        <label asp -for= "NytBlog.Content"></label>
-        <input asp -for= "NytBlog.Content" class= "form-control"/>
-        <span asp - validation -for= "NytBlog.Content" class= "text-danger" ></span>
-    </div >
+    <div class="form-group">
+        <label asp-for="NytBlog.Content"></label>
+        <input asp-for="NytBlog.Content" class="form-control" />
+        <span asp-validation-for="NytBlog.Content" class="text-danger"></span>
+    </div>
 
-    <button type = "submit" class= "btn btn-primary" > Gem Blog </button>
+    <button type="submit" class="btn btn-primary">Gem Event</button>
 </form>

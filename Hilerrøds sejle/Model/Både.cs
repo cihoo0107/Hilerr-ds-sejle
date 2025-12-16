@@ -11,8 +11,11 @@
         public string ByggeÅr { get; }
         public string BådNavn { get; }
 
+        private static int _nextId = 1;
+
         public Båd(string bådtype, string model, string sejlNummer, int bådLængde, int bådHøjde, string byggeÅr, string bådnavn)
         {
+            Id = _nextId++;
             BådType = bådtype;
             Model = model;
             SejlNummer = sejlNummer;

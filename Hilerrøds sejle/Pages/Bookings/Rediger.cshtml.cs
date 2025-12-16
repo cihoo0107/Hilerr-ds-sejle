@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Hilerrøds_sejle.Model;
 using Hilerrøds_sejle.Service;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Hilerrøds_sejle.Pages.Bookings
 {
@@ -33,22 +34,67 @@ namespace Hilerrøds_sejle.Pages.Bookings
         {
             Medlemmer = _medlemService.GetAll();
             Både = _bådService.GetAll();
- 
+
+
             BookingToEdit = _bookingService.GetById(id);
             if (BookingToEdit == null) {
                 return NotFound();
             }
+
+            SelectedMedlemId = BookingToEdit.BookingMedlem.Id; //
+            SelectedBådId = BookingToEdit.BookingBåd.Id; //
+
             return Page();
         }
 
-        public IActionResult OnPost() {
-            Booking? current = _bookingService.GetById(BookingToEdit.Id);
-            if (current == null) {
-                return NotFound();
+        //public IActionResult OnPost()
+        //{
+        //    Booking? current = _bookingService.GetById(BookingToEdit.Id);
+        //    if (current == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var medlem = _medlemService.GetById(SelectedMedlemId);
+
+        //    var båd = _bådService.GetById(SelectedBådId);
+
+        //    if (medlem == null || båd == null)
+        //    {
+        //        ModelState.AddModelError("", "Medlem eller båd findes ikke.");
+        //        Medlemmer = _medlemService.GetAll();
+        //        Både = _bådService.GetAll();
+        //        return Page();
+        //    }
+
+        //    BookingToEdit.BookingBåd = båd;
+        //    BookingToEdit.BookingMedlem = medlem;
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Page();
+        //    }
+
+
+        //    _bookingService.Delete(current.Id);
+        //    _bookingService.Add(BookingToEdit);
+
+        //    return RedirectToPage("Index");
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                Medlemmer = _medlemService.GetAll();
+                Både = _bådService.GetAll();
+                return Page();
             }
 
-            var medlem = _medlemService.GetById(SelectedMedlemId);
+            Booking current = _bookingService.GetById(BookingToEdit.Id);
+            if (current == null)
+                return NotFound();
 
+            var medlem = _medlemService.GetById(SelectedMedlemId);
             var båd = _bådService.GetById(SelectedBådId);
 
             if (medlem == null || båd == null)
@@ -59,18 +105,25 @@ namespace Hilerrøds_sejle.Pages.Bookings
                 return Page();
             }
 
-            BookingToEdit.BookingBåd = båd;
-            BookingToEdit.BookingMedlem = medlem;
+            // OPDATER eksisterende booking
+            current.BookingMedlem = medlem;
+            current.BookingBåd = båd;
+            current.Destination = BookingToEdit.Destination;
+            current.Tidspunkt = BookingToEdit.Tidspunkt;
+            current.ErGennemført = BookingToEdit.ErGennemført;
 
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _bookingService.Delete(current.Id);
-            _bookingService.Add(BookingToEdit);
+            _bookingService.Update(current);
 
             return RedirectToPage("Index");
         }
+
+
+
     }
+
+
 }
+
+
+
+
