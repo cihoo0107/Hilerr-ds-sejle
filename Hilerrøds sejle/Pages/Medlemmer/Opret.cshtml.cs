@@ -22,7 +22,11 @@
             {
             }
 
-            public IActionResult OnPost()
+        [TempData]
+        public string? SuccessMessage { get; set; }
+
+
+        public IActionResult OnPost()
             {
                 if (!ModelState.IsValid)
                 {
@@ -30,6 +34,9 @@
                 }
 
                 _repo.Add(NyMedlem);
+
+            SuccessMessage = "Medlem oprettet.";
+
                 return RedirectToPage("Index");
             }
         }

@@ -9,9 +9,16 @@
 
 <p>Her vises vores medlemmer.</p>
 
+@if (TempData["SuccessMessage"] is string msg)
+{
+    <div class="alert alert-success col-md-3">
+        @msg
+    </div>
+}
+
 <p>
     <a asp-page="Opret" class="btn btn-primary">Opret nyt medlem</a>
-</p>    
+</p> 
 
 <table class="table table-striped">
 <thead>
@@ -20,6 +27,8 @@
             <th>Navn</th>
             <th>Email</th>
             <th>Rolle</th>
+            <th>Adresse</th>
+            <th>Telefonnummer</th>
             <th></th>
     </tr>
 </thead>
@@ -31,6 +40,8 @@
                 <td>@m.Navn</td>
                 <td>@m.Email</td>
                 <td>@m.Rolle</td>
+                <td>@m.Adresse</td>
+                <td>@m.Telefonnummer</td>
                 <td>
                     <a asp-page="Rediger" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Rediger </a> @*Edit er ændret til Rediger*@
                     <a asp-page="Slet" asp-route-id="@m.Id" class="btn btn-sm btn-secondary">Slet </a> @*Delete er ændret til Slet*@

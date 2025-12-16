@@ -3,8 +3,8 @@
     public class Blog
     {
         public string Id { get; set; }
-        public string Titel { get; }
-        public string Content { get; }
+        public string Titel { get; set; }
+        public string Content { get; set; }
 
         public Blog()
         {
