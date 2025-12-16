@@ -25,7 +25,7 @@ namespace Hilerrøds_sejle.Pages.Både
         {
             if (!ModelState.IsValid)
             {
-                return Page();
+                return RedirectToPage("index");
             }
 
             _bådeservice.Add(NytBåd);
