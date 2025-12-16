@@ -23,7 +23,7 @@ namespace Hilerrøds_sejle.Pages.Blogs
             BlogToDelete = _blogService.GetAll().FirstOrDefault(blog => blog.Id == id);
             if (BlogToDelete == null)
             {
-                return RedirectToPage("/Blog/Index");
+                return RedirectToPage("/Blogs/Index");
             }
 
             return Page();
@@ -31,7 +31,7 @@ namespace Hilerrøds_sejle.Pages.Blogs
         public IActionResult OnPost()
         {
             _blogService.DeleteById(BlogToDelete.Id);
-            return RedirectToPage("/Blog/Index");
+            return RedirectToPage("/Blogs/Index");
 
         }
 

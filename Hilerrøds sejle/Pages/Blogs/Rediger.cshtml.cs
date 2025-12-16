@@ -20,7 +20,7 @@ namespace Hilerrøds_sejle.Pages.Blogs
             BlogToEdit = _blogService.GetAll().FirstOrDefault(blog => blog.Id == id);
             if (BlogToEdit == null)
             {
-                return RedirectToPage("/Blog/Index");
+                return RedirectToPage("/Blogs/Index");
             }
             return Page();
         }
@@ -31,7 +31,7 @@ namespace Hilerrøds_sejle.Pages.Blogs
                 return Page();
             }
             _blogService.Update(BlogToEdit);
-            return RedirectToPage("/Blog/Index");
+            return RedirectToPage("/Blogs/Index");
         }
     }
 }
