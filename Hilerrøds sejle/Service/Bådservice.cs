@@ -11,7 +11,7 @@ namespace Hilerrøds_sejle.Service
             new Båd("Sejlbåd", "Q35","3115",8,3,"2003","The Quruce"),
             new Båd("Skoda", "60","3112",4,1,"2022","Enyaq")
         };
-        private static int _nextId = 4;
+        private static int _nextId = 3;
 
         public List<Båd> GetAll()
         {

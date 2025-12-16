@@ -7,6 +7,7 @@ namespace Hilerrøds_sejle.Service
         List<Booking> GetAll();
         void Add(Booking booking);
         void Delete(string id);
+        void Update(Booking booking); //Tilføjet 
         Booking? GetById(string id);
     }
 }
