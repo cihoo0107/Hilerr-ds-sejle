@@ -31,4 +31,17 @@ public class BookingService : IBookingService
     {
         _Bookings.Add(booking);
     }
+
+    public Booking? GetById(string id)
+
+    {
+        return _Bookings.FirstOrDefault(m => m.Id == id);
+    }
+
+    public void Delete(string id)
+    {
+        var existing = GetById(id);
+        if (existing != null)
+            _Bookings.Remove(existing);
+    }
 }
