@@ -8,7 +8,7 @@
 
 <hr />
 
-<h4>Du kan redigere, Navn, Email og Rolle.</h4>
+@* <h4>Rediger følgende oplysninger om medlemmet:</h4> *@
 
 <div>
     <h5>Medlemmet:</h5>
@@ -22,6 +22,12 @@
 
     <dt>Rolle</dt>
     <dd>@Model.MedlemToEdit.Rolle</dd>
+
+    <dt>Adresse</dt>
+    <dd>@Model.MedlemToEdit.Adresse</dd>
+
+    <dt>Telefonnummer</dt>
+    <dd>@Model.MedlemToEdit.Telefonnummer</dd>
 
     </dl>
 
@@ -73,7 +79,9 @@
         </div> *@
 
 
-        <div class="form-group">
+
+
+        <div class="form-group col-md-2">
             <label asp-for="MedlemToEdit.Rolle"></label>
             <select asp-for="MedlemToEdit.Rolle" class="form-control">
                 <option value="">-- Vælg rolle --</option>
@@ -84,6 +92,31 @@
             <span asp-validation-for="MedlemToEdit.Rolle" class="text-danger"></span>
         </div>
 
+
+
+        <div class="form-group">
+            <dl></dl>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MedlemToEdit.Adresse"></label>
+            <input asp-for="MedlemToEdit.Adresse" />
+            <span asp-validation-for="MedlemToEdit.Adresse"></span>
+        </div>
+
+        <div class="form-group">
+            <dl></dl>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MedlemToEdit.Telefonnummer"></label>
+            <input asp-for="MedlemToEdit.Telefonnummer" />
+            <span asp-validation-for="MedlemToEdit.Telefonnummer"></span>
+        </div>
+
+        <div>
+         <dl></dl>
+        </div>
 
         @*<button type="submit">Gem</button>*@
         <button type="submit" class="btn btn-primary">Ændre</button>

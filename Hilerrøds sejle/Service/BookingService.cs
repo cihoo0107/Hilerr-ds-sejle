@@ -10,7 +10,7 @@ public class BookingService : IBookingService
     {
         new Booking(
             new Båd("Motorbåd","X20","4120",10,4,"2005","Lambo"),
-            new Medlem("Niels", "Niels@mail.com",001,Medlemsrolle.Formand),
+            new Medlem("Niels", "Niels@mail.com", 001, Medlemsrolle.Formand, "10203040", "Købmandsgade 12"),
             "Hillerød Sø",
             DateTime.Now.AddHours(1),
             false
@@ -18,7 +18,7 @@ public class BookingService : IBookingService
 
         new Booking(
             new Båd("Motorbåd","X20","4120",10,4,"2005","Lambo"),
-            new Medlem("Niels", "Niels@mail.com",001,Medlemsrolle.Formand),
+            new Medlem("Niels", "Niels@mail.com", 001, Medlemsrolle.Formand, "10203040", "Købmandsgade 12"),
             "Frederiksborg Slot",
             DateTime.Now.AddHours(2),
             false
