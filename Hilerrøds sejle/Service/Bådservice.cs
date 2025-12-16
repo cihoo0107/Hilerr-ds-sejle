@@ -35,7 +35,7 @@ namespace Hilerrøds_sejle.Service
         {
             var existing = GetById(båd.Id);
         }
-        public void Delete(int id)
+        public void DeleteById(int id)
         {
             var existing = GetById(id);
             if (existing != null)

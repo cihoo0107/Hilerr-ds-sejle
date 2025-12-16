@@ -16,8 +16,20 @@ namespace Hilerrøds_sejle.Pages.Både
         {
             _bådservice = bådservice;
         }
-        public void OnGet()
+
+        public IActionResult OnGet(int id)
         {
+            BådToDelete = _bådservice.GetAll().FirstOrDefault(b => b.Id == id);
+            if (BådToDelete == null)
+            {
+                return RedirectToPage("/Både/Index");
+            }
+            return Page();
         }
+        public IActionResult OnPost()
+        {
+            return Page();
+        }
+
     }
 }

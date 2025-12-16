@@ -2,3 +2,18 @@
 @model Hilerrøds_sejle.Pages.Både.SletModel
 @{
 }
+
+<h2>Bekræft sletning</h2>
+
+<p>Er du sikker på, at du vil slette dette Båd?</p>
+
+<div>
+    <strong>Navn:</strong> @Model.BådToDelete.BådNavn <br />
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="BådToDelete.Id" />
+
+    <button type="submit" class="btn btn-danger">Slet</button>
+    <a asp-page="/Events/Index" class="btn btn-secondary">Annuller</a>
+</form>
