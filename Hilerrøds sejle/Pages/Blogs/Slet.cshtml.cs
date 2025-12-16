@@ -28,6 +28,13 @@ namespace Hilerrøds_sejle.Pages.Blogs
 
             return Page();
         }
+        public IActionResult OnPost()
+        {
+            _blogService.DeleteById(BlogToDelete.Id);
+            return RedirectToPage("/Blog/Index");
+
+        }
+
     }
 }
 
