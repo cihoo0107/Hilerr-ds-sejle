@@ -26,7 +26,8 @@ namespace Hilerrøds_sejle.Pages.Både
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToPage("index");
+                Console.WriteLine("fejl sker her");
+                return Page();
             }
 
 
