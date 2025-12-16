@@ -13,6 +13,8 @@
 
         private static int _nextId = 1;
 
+        public Båd() { }
+
         public Båd(string bådtype, string model, string sejlNummer, int bådLængde, int bådHøjde, string byggeÅr, string bådnavn)
         {
             Id = _nextId++;

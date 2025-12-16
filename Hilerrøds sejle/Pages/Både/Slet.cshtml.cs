@@ -26,9 +26,15 @@ namespace Hilerrøds_sejle.Pages.Både
             }
             return Page();
         }
-        public IActionResult OnPost()
+        public IActionResult OnPost(int id)
         {
-            return Page();
+            var existing = _bådservice.GetById(id);
+            if (existing == null) return NotFound();
+
+
+            _bådservice.DeleteById(id);
+
+            return RedirectToPage("Index");
         }
 
     }
