@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace Hilerrøds_sejle.Pages.Både
 {
     public class OpretModel : PageModel
+
     {
         private IBådservice _bådeservice;
         public Båd NewBåd { get; set; }
@@ -27,6 +28,8 @@ namespace Hilerrøds_sejle.Pages.Både
             {
                 return Page();
             }
+
+
 
             _bådeservice.Add(NytBåd);
             return RedirectToPage("index");
