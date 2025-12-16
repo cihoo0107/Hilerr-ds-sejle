@@ -2,3 +2,24 @@
 @model Hilerrøds_sejle.Pages.Blogs.RedigerModel
 @{
 }
+
+<h2>Rediger Blog</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="BlogToEdit.Id" />
+
+    <div class="form-group">
+        <label asp-for="BlogToEdit.Titel"></label>
+        <input asp-for="BlogToEdit.Titel" class="form-control" />
+        <span asp-validation-for="BlogToEdit.Titel" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BlogToEdit.Content"></label>
+        <textarea asp-for="BlogToEdit.Content" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="BlogToEdit.Content" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Gem ændringer</button>
+    <a asp-page="/Blogs/Index" class="btn btn-secondary">Annuller</a>
+</form>
