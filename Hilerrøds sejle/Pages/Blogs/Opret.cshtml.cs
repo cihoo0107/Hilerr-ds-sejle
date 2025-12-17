@@ -10,13 +10,14 @@ namespace Hilerrøds_sejle.Pages.Blogs
         private IBlogService _blogservice;
         public Blog NewBlog { get; set; }
 
+        [BindProperty]
+        public Blog NytBlog { get; set; }
+
         public OpretModel(IBlogService blogService)
         {
             _blogservice = blogService;
         }
 
-        [BindProperty]
-        public Blog NytBlog { get; set; }
         public void OnGet()
         {
         }
