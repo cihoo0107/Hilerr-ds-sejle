@@ -10,13 +10,14 @@ namespace Hilerrøds_sejle.Pages.Events
         private IEventService _eventservice;
         public Event NewEvent { get; set; }
 
+        [BindProperty]
+        public Event NytEvent { get; set; }
+
         public OpretModel(IEventService eventservice)
         {
             _eventservice = eventservice;
         }
 
-        [BindProperty]
-        public Event NytEvent { get; set; }
         public void OnGet()
         {
         }
