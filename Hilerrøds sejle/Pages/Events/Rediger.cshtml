@@ -2,3 +2,23 @@
 @model Hilerrøds_sejle.Pages.Events.RedigerModel
 @{
 }
+
+<h2>Rediger Event</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="EventToEdit.Id" />
+    <div class="form-group">
+        <label asp-for="EventToEdit.Navn"></label>
+        <input asp-for="EventToEdit.Navn" class="form-control" />
+        <span asp-validation-for="EventToEdit.Navn" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EventToEdit.Tidspunkt"></label>
+        <input asp-for="EventToEdit.Tidspunkt" type="datetime-local" class="form-control" />
+        <span asp-validation-for="EventToEdit.Tidspunkt" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Gem ændringer</button>
+    <a asp-page="/Events/Index" class="btn btn-secondary">Annuller</a>
+</form>

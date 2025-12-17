@@ -4,16 +4,28 @@
 }
 
 <h2>Events</h2>
-<ul>
-    <a asp-page="/Events/Opret" class="btn btn-success mb-3">Opret nyt Event</a>
-    @foreach (var e in Model.Events)
-    {
-        <li>
-            <strong>@e.Navn</strong> - @e.Tidspunkt.ToString("dd.MM.yyyy HH:mm")
-            <!-- Slet-knap -->
-            <a asp-page="/Events/Slet" asp-route-id="@e.Id" class="btn btn-danger btn-sm ms-2">
-                Slet
-            </a>
-        </li>
-    }
-</ul>
+
+<a asp-page="/Events/Opret" class="btn btn-primary mb-3">Opret nyt Event</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Navn</th>
+            <th>Tidspunkt</th>
+            <th>Handlinger</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model.Events)
+        {
+            <tr>
+                <td>@e.Navn</td>
+                <td>@e.Tidspunkt.ToString("dd.MM.yyyy HH:mm")</td>
+                <td>
+                    <a asp-page="/Events/Rediger" asp-route-id="@e.Id" class="btn btn-primary btn-sm">Rediger</a>
+                    <a asp-page="/Events/Slet" asp-route-id="@e.Id" class="btn btn-danger btn-sm ms-2">Slet</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

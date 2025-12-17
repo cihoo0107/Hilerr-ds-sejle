@@ -6,8 +6,6 @@
         public string Navn { get; set; }
         public DateTime Tidspunkt { get; set; }
       
-       
-
         public Event() 
         {
             Id = Guid.NewGuid().ToString();
@@ -19,8 +17,6 @@
             Id = Guid.NewGuid().ToString();
             Navn = navn;
             Tidspunkt = tidspunkt;
-            
-
         }
     }
 }
