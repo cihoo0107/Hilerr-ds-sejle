@@ -20,7 +20,7 @@ namespace Hilerrøds_sejle.Pages.Events
             EventToEdit = _eventService.GetAll().FirstOrDefault(e => e.Id == id);
             if (EventToEdit == null)
             {
-                return RedirectToPage("/Events/Index");
+                return RedirectToPage("Index");
             }
             return Page();
         }
@@ -31,7 +31,7 @@ namespace Hilerrøds_sejle.Pages.Events
                 return Page();
             }
             _eventService.Update(EventToEdit);
-            return RedirectToPage("/Events/Index");
+            return RedirectToPage("Index");
         }
     }
 }
