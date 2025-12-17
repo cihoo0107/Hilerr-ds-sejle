@@ -1,0 +1,55 @@
+﻿@page
+@model Hilerrøds_sejle.Pages.Både.RedigerModel
+@{
+}
+<h2>Rediger Båd</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="BådToEdit.Id" />
+
+    <div class="form-group">
+        <label asp-for="BådToEdit.BådNavn"></label>
+        <input asp-for="BådToEdit.BådNavn" class="form-control" />
+        <span asp-validation-for="BådToEdit.BådNavn" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BådToEdit.BådType"></label>
+        <input asp-for="BådToEdit.BådType" class="form-control" />
+        <span asp-validation-for="BådToEdit.BådType" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BådToEdit.Model"></label>
+        <input asp-for="BådToEdit.Model" class="form-control" />
+        <span asp-validation-for="BådToEdit.Model" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BådToEdit.SejlNummer"></label>
+        <input asp-for="BådToEdit.SejlNummer" class="form-control" />
+        <span asp-validation-for="BådToEdit.SejlNummer" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BådToEdit.ByggeÅr"></label>
+        <input asp-for="BådToEdit.ByggeÅr" class="form-control" />
+        <span asp-validation-for="BådToEdit.ByggeÅr" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BådToEdit.BådLængde"></label>
+        <input asp-for="BådToEdit.BådLængde" type="number" class="form-control" />
+        <span asp-validation-for="BådToEdit.BådLængde" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BådToEdit.BådHøjde"></label>
+        <input asp-for="BådToEdit.BådHøjde" type="number" class="form-control" />
+        <span asp-validation-for="BådToEdit.BådHøjde" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Gem ændringer</button>
+    <a asp-page="/Både/Index" class="btn btn-secondary">Annuller</a>
+</form>
+
