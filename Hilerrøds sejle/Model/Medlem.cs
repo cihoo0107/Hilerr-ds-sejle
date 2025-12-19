@@ -15,11 +15,11 @@ public class Medlem
 
     [Required(ErrorMessage = "Indtast dit navn")]
     [StringLength(100, MinimumLength = 2, ErrorMessage = "Navnet er for kort")]
-    public string Navn { get; set; } = string.Empty;
+    public string Navn { get; set; }
 
     [Required(ErrorMessage = "Indtast din mail")]
     [EmailAddress(ErrorMessage = "Ugyldig Email")]
-    public string Email { get; set; } = string.Empty;
+    public string Email { get; set; }
 
     [Required]
     public Medlemsrolle Rolle { get; set; } = Medlemsrolle.Medlem;
@@ -28,7 +28,7 @@ public class Medlem
     [StringLength(8,MinimumLength=8,ErrorMessage ="Telefon nummeret er for kort")]
     public string Telefonnummer {  get; set; } = string.Empty;
 
-    public string Adresse { get; set; } = string.Empty;
+    public string Adresse { get; set; }
 
     //Skal være tilstede for razor pages modelbinding
     public Medlem() { }
