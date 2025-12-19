@@ -33,7 +33,17 @@ namespace Hilerrøds_sejle.Service
 
         public void Update(Båd båd)
         {
-            var existing = GetById(båd.Id);
+            var existing = _både.FirstOrDefault(b => b.Id == båd.Id);
+            if (existing != null)
+            {
+                existing.BådNavn = båd.BådNavn;
+                existing.SejlNummer = båd.SejlNummer;
+                existing.BådHøjde = båd.BådHøjde;
+                existing.BådLængde = båd.BådLængde;
+                existing.ByggeÅr = båd.ByggeÅr;
+                existing.BådType = båd.BådType;
+                existing.Model = båd.Model;
+            }
         }
         public void DeleteById(int id)
         {

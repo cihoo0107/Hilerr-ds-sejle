@@ -8,7 +8,6 @@ namespace Hilerrøds_sejle.Pages.Events
     public class OpretModel : PageModel
     {
         private IEventService _eventservice;
-        public Event NewEvent { get; set; }
 
         [BindProperty]
         public Event NytEvent { get; set; }

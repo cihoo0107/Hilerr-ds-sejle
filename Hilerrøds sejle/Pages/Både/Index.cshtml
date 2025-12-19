@@ -19,20 +19,20 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var båd in Model.Både)
-    {
-        <tr>
-            <td>@båd.BådNavn</td>
-            <td>@båd.BådType</td>
-            <td>@båd.Model</td>
-            <td>@båd.SejlNummer</td>
-            <td>@båd.BådLængde</td>
-            <td>@båd.BådHøjde</td>
-            <td>@båd.ByggeÅr</td>
-            <td>
-                <a asp-page="Detaljer" asp-route-sejlNummer="@båd.SejlNummer" class="btn btn-sm btn-primary">
-                    Vis
-                        <a asp-page="Slet" asp-route-id="@båd.Id" class="btn btn-sm btn-secondary">Slet </a>
+        @foreach (var båd in Model.Både)
+        {
+            <tr>
+                <td>@båd.BådNavn</td>
+                <td>@båd.BådType</td>
+                <td>@båd.Model</td>
+                <td>@båd.SejlNummer</td>
+                <td>@båd.BådLængde</td>
+                <td>@båd.BådHøjde</td>
+                <td>@båd.ByggeÅr</td>
+                <td>
+                    <a asp-page="Slet" asp-route-id="@båd.Id" class="btn btn-sm btn-secondary">Slet </a>
+                    <a asp-page="/Både/Rediger" asp-route-id="@båd.Id" class="btn btn-primary btn-sm ms-2">
+                        Rediger
                     </a>
                 </td>
             </tr>
